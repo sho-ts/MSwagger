@@ -15,7 +15,7 @@ const getComponent = (schema, baseRef) => {
 
   if (!ref || ref.length < 1) return null;
 
-  /** 配列が空になるまで再起的に実行 */
+  /** 配列が空になるまで再帰的に実行 */
   const reducedRef = ref.filter(((_, i) => i > 0));
   if (reducedRef.length > 0) {
     return getComponent(schema[ref[0]], reducedRef)
